@@ -25,10 +25,11 @@ app.use("/api/v1", fav);
 app.use("/api/v1", order);
 
 // Serve static files
-app.use(express.static(path.resolve(__dirname, "frontend", "dist")));
 
+  app.use(express.static(path.resolve(__dirname, "frontend", "dist")));
 // Serve index.html for all other routes
 app.get("*", (req, res) => {
+
   res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
 });
 
